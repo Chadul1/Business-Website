@@ -1,0 +1,49 @@
+/* Application Form Styling */
+#applicationForm {
+    /* Define strict tables for consistent form formatting */
+    form  { display: table;      }
+    p     { display: table-row;  }
+    label { display: table-cell; }
+    input { display: table-cell; }
+    padding: 5px;
+    display: flex;
+    align-content: center;
+}
+
+#applicationForm label{
+    font-weight: bold;
+}
+
+#applicationSubmit{
+    width: 200px;
+}
+
+.form-group{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* The card displaying the job information */
+#jobCard {
+    border: 1px solid rgb(125, 125, 125);
+    border-radius: 5px;
+}
+
+/* Heading text of card */
+#jobCard h5 {
+    background-color: #0d6efd;
+    color: white;
+    padding: 5px;
+    overflow: hidden;
+}
+
+#jobCard p {
+    margin-bottom: 0.2rem;
+    padding: 5px;
+}
+
+#jobTime {
+    font-size: 0.8em;
+    margin-top: 0px;
+}

@@ -1,0 +1,24 @@
+{
+    "users": [
+      {
+        "email": "kody@gmail.com",
+        "password": "weigel",
+        "admin": "true"
+      },
+      {
+        "email": "madison@gmail.com",
+        "password": "debot",
+        "admin": "false"
+      },
+      {
+        "email": "joey@gmail.com",
+        "password": "password",
+        "admin": "false"
+      },
+      {
+        "email": "chad@gmail.com",
+        "password": "waltenberg",
+        "admin": "false"
+      }
+    ]
+  }

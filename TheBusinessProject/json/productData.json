@@ -1,0 +1,175 @@
+{    
+     "productDataArray" : 
+    [
+        {
+            "productPriceRange": "",
+            "productName": "Duplo Train Set",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 2+",
+            "productPrice": "30",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Classic Bricks Box",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 5+",
+            "productPrice": "25",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Space Exploration Set",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 10+",
+            "productPrice": "40",
+            "productQuantity": 0
+          },
+          {
+            "productName": "City Fire Station",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 10+",
+            "productPrice": "60",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Technic Race Car",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 10+",
+            "productPrice": "70",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Marvel Avengers Tower",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 10+",
+            "productPrice": "90",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Friends Heartlake City",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 10+",
+            "productPrice": "80",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Ninjago Temple of Airjitzu",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 16+",
+            "productPrice": "120",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Creator Expert Taj Mahal",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 16+",
+            "productPrice": "300",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Architecture Empire State Building",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 16+",
+            "productPrice": "110",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Duplo Bathtub Animals",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 2+",
+            "productPrice": "15",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Red 2x2 Brick",
+            "productType": "Individual Brick",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 5+",
+            "productPrice": "0.75",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Green 1x1 Round Plate",
+            "productType": "Individual Brick",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 5+",
+            "productPrice": "0.25",
+            "productQuantity": 0
+          },
+
+          {
+            "productName": "Orange 2x3 Plate",
+            "productType": "Individual Brick",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 5+",
+            "productPrice": "0.80",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Brown 1x6 Plate",
+            "productType": "Individual Brick",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 5+",
+            "productPrice": "0.30",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Brown 2x2 Brick",
+            "productType": "Individual Brick",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 5+",
+            "productPrice": "0.70",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Bulk Lego (1 lb)",
+            "productType": "Bulk Bricks",
+            "productCondition": "Used",
+            "productAgeCategory": "Ages 5+",
+            "productPrice": "15",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Bulk Lego (5 lb)",
+            "productType": "Bulk Bricks",
+            "productCondition": "Used",
+            "productAgeCategory": "Ages 5+",
+            "productPrice": "60",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Bulk Duplo Lego (3 lb)",
+            "productType": "Bulk Bricks",
+            "productCondition": "Used",
+            "productAgeCategory": "Ages 2+",
+            "productPrice": "60",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Aqua 1x2 Brick",
+            "productType": "Individual Brick",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 5+",
+            "productPrice": "0.30",
+            "productQuantity": 0
+          },
+          {
+            "productName": "Duplo Dinosaur Nursery",
+            "productType": "Brick Set",
+            "productCondition": "New",
+            "productAgeCategory": "Ages 2+",
+            "productPrice": "20",
+            "productQuantity": 0
+          }    
+        ]
+      }

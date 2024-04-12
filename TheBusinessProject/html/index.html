@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- linked fonts "Alegreya" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Limelight&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+
+    <!-- JQuery  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Latest compiled JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- The JS added -->
+    <script defer src="../js/navBar.js"></script>
+    <script defer src="../js/weatherAPI.js"></script>
+    <script defer type="module" src="../js/product.mjs"></script>
+
+    <!-- Let cart count be seen on other pages-->
+    <script defer type="module" src="../js/transferToCart.mjs"></script>
+
+     <!-- Other CSS Links -->
+     <link href="../css/index.css" rel="stylesheet">
+
+
+    <title>Welcome!</title>
+    <link rel="icon" type="image/x-icon" href="../media/Logo.png">
+</head>
+
+<body>
+    <!-- This background image is the header's background -->
+    <div id="background_Image" class="container-fluid shadow-sm">
+        <img class="img-fluid rounded mx-auto d-block shadow-sm" src="../media/indexbackground.png">
+        <!-- A shadow to darken the header so the logo is easier to see. -->
+        <div class="shadow"></div>
+        <!-- Image logo  -->
+        <div class="interior">
+            <img class="img-fluid border border-dark rounded mx-auto d-block shadow-sm" src="../media/LEGO Logo 1.png">
+        </div> 
+    </div>
+    <div id="quotation" class="container-fluid display-1 border-top border-dark">
+        <h1>"We're building up our community one brick at a time" <br>
+            - Martinease Mortrinio, Brickz Founder
+        </h1>
+    </div>
+    <!-- A container that holds all of the site interests for the user -->
+    <div class="container">
+        
+          <!-- This row is dedicated to buying individual lego bricks  -->
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Single Brick Orders</h2>
+            <p class="h4">
+              Our brick storage has over 1200 individual lego pieces up for sale. Each brick has it's little place in lego's history with it's shape, palette and materials.
+                <br>
+                <br>
+                <a href="../html/productPage.html" ><button type="button" class="btn btn-primary btn-lg">Learn More</button></a>
+                </p>
+          </div>
+          <div class="col-md-6">
+            <img class="image" src="../media/LandingPageScatteredLegos.jpg" alt="Placeholder Image">
+          </div>
+        </div>
+        
+          <!-- This row is dedicated to Curated sets  -->
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Curated Sets</h2>
+            <p class="h4">
+                Our crack-shot team of builders are working every day to make new curated sets for purchase.
+                 The most popular of these are the city scape, historical monuments and the various kids lines of lego sets that have been removed from Lego's roster. 
+                <br>
+                <br>
+                <a href="../html/productPage.html" ><button type="button" class="btn btn-primary btn-lg">Learn More</button></a>
+                </p>
+          </div>
+          <div class="col-md-6">
+            <img class="image" src="../media/landingPageCuratedSet.png" alt="Placeholder Image">
+          </div>
+        </div>
+        
+          <!-- This row is dedicated to Lego restoration -->
+        <div class="row">
+            <div class="col-md-6">
+              <h2>Brick Restoration</h2>
+              <p class="h4">
+                Our team of builders have many of the chemicals, plastics and molds to hold and maintain the older bricks among us. 
+                Our team will do their best to repair, clean and strengthen the bricks that are set in front of the.
+                <br>
+                <a href="../html/productPage.html" ><button type="button" class="btn btn-primary btn-lg">Learn More</button></a>
+                </p>
+            </div>
+            <div class="col-md-6">
+              <img class="image" src="../media/landingRestoration.png">
+            </div>
+          </div>
+
+          <!-- This row is dedicated to lego sculptures and their commissions  -->
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Sculpture Commissions</h2>
+              <p class="h4">
+                "If you hear a voice within you say 'you cannot build,' then by all means build, and that voice will be silenced." - Martin, Our Founder. 
+                <br>
+                <br>
+                Our founder believed that Lego wasn't just a toy, but a form of expression. He developed out sculptors to build statues and gardens all made from lego
+                Now, we offer the same service to people wanting a special centerpiece at parties, weddings, and many other such occasions. 
+                <br>
+                <br>
+                <a href="../html/productPage.html" ><button type="button" class="btn btn-primary btn-lg">Learn More</button></a>
+                </p>
+            </div>
+            <div class="col-md-6">
+              <img class="image" src="../media/landingPageCommission.jpg" alt="Placeholder Image">
+            </div>
+          </div>
+
+           <!-- This row is dedicated to a company overview including a weather API  -->
+           <div class="row">
+            <div class="col-md-6">
+              <h2>About Our Company</h2>
+              <p class="h4">
+                Our company headquarters is stationed in Plover, WI. 
+                Our company strives to bring imaginative play to people of all ages. Explore our variety of products and services, our mission and values, and learn more about our company's founder, Martinease Mortinio. 
+                <br> <br>
+              
+                <!-- Holds the weather API data -->
+                <div id="weatherContainer">
+
+                  <!-- header for weather data -->
+                  <h4><u>Today's Company Forecast:</u></h4>
+
+                  <!-- The location the weather data is from -->
+                  <h4 id="weatherLocationText">Plover, WI</h4>
+
+                  <!-- The forecast image -->
+                  <img id="weatherSymbol">
+                    
+                  <!-- The minimum temperature today-->
+                  <h5 id="weatherTemperatureMinimumText">""</h5>
+
+                   <!-- The maximum temperature today-->
+                   <h5 id="weatherTemperatureMaximumText">""</h5>
+                </div> <br>
+                <a href="../html/aboutPage.html" ><button type="button" class="btn btn-primary btn-lg">Learn More</button></a>
+              </p> <br>
+
+              
+            </div>
+            <div class="col-md-6">
+              <img class="image" src="../media/headquarters.jpg" alt="Headquarters Image">
+            </div>
+          </div>
+      </div>
+  
+</body>
+</html>

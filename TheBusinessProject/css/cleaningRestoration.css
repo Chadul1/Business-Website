@@ -1,0 +1,103 @@
+body {
+    overflow-x: hidden;
+}
+
+/* Container for cards and form */
+#crContainer {
+    padding:0px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The row containing the cards */
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container of the cards. */
+.col-sm, .col-sm-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-bottom: 30px;
+    max-width:fit-content;
+}
+
+/* Image in the card */
+.card-img-top {
+    max-height: 475px;
+    max-width: 475px;
+    width: 100%;
+}
+
+/* The Card Body */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0px;
+    overflow-x: hidden;
+}
+
+/* Card Body h5 Text */
+.card-body h5 {
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Quote Card */
+#quote{
+    height: 100%;
+}
+
+/* Quote Card Header */
+#quote h5 {
+    width: 120%;
+}
+
+/* Quote Bullet Point Container */
+.quoteBullets {
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+/* Service Form Styling */
+#serviceForm {
+    /* Define strict tables for consistent form formatting */
+    form  { display: table;      }
+    p     { display: table-row;  }
+    label { display: table-cell; }
+    input { display: table-cell; }
+    padding: 5px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+.jumbotron h1{
+    font-size: 50px;
+    color: white;
+    text-shadow: 0px 0px 8px black;
+  }
+
+  .jumbotron {
+    height: 50%;
+    background: url('../media/services/service_banner_opacity50.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }

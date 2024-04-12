@@ -1,0 +1,58 @@
+/* Styling for the Background image, gradient and the text overlay */
+#background_Image{
+    position: relative;
+    display: block;
+    background-color: rgb(10, 43, 105);
+} 
+
+#background_Image .shadow{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    right: 0;
+}
+/* Styling for the Background image, gradient and the text overlay */
+#background_Image{
+    position: relative;
+    display: block;
+    background-color: rgb(10, 43, 105);
+} 
+
+#background_Image .interior{
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    width: 30%;
+    transform: translate(-50%, -50%);  
+
+}
+
+/* Styling for the quotation for the company motto. */
+#quotation{
+    padding-top: 50px;
+    text-align: center;
+    font-family:  "Alegreya Sans", sans-serif; 
+}
+
+/* A container that holds all of the images */
+.container {
+    margin-top: 50px;
+  }
+/* each row of the containers */
+  .container .row {
+    display: flex;
+    padding-top: 25px;
+    align-items: center;
+    border-top: 3px solid #333;
+  }
+  /* the text columns in the row  */
+  .container .row .col-md-6 {
+    padding: 20px;
+  }
+  /* and the image column of the row  */
+  .container .row .col-md-6 .image {
+    width: 100%;
+    height: 20%;
+  }

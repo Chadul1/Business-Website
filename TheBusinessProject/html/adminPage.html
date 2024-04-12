@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration Page</title>
+
+    <!-- jQuery Link -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Link(s) to other scripts -->
+    <script src="../js/navbar.js"></script>
+    <script defer type="module" src="../js/product.mjs"></script>
+    <script defer type="module" src="../js/adminFunctions.mjs"></script>
+    <script defer type="module" src="../js/validation.mjs"></script>
+
+    <!-- Link(s) to other style sheet(s) -->
+    <link href="../css/adminPage.css" rel="stylesheet">
+
+    <script defer type="module" src="../js/adminLogIn.js"></script>
+</head>
+
+<body>
+    
+    <!-- The top row of the page -->
+    <div class="row mx-auto my-3" id="adminHeadingContainer">
+
+        <!-- A fancy, custom modal pop-up dialog that is bootstrap compatible -->
+            <!-- Reference: https://getbootstrap.com/docs/4.0/components/modal/ -->
+            <!-- Reference: https://www.youtube.com/watch?v=29ENlVMuTHs -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Delete Request</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div> 
+                <div class="modal-body">
+                    <!-- This will auto generate (JS) -->
+                  <p id="deletePrompt"></p> 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="deleteModal" id="deleteModalButton_Delete">Delete</button>
+                   
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" data-target="deleteModal" id="deleteModalButton_Close">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- A banner alert for successful submission of a new product -->
+        <div class="hidden alert alert-success mx-3 alert-dismissible fade show" role="alert" id="productAddSuccessAlert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            The product was added successfully!
+        </div>
+
+        <!-- A banner alert for successful submission of a product edit-->
+        <div class="hidden alert alert-success mx-3 alert-dismissible fade show" role="alert" id="productEditSuccessAlert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            The product was edited successfully!
+        </div>
+
+        <!-- A banner alert for successful submission of a product delete-->
+        <div class="hidden alert alert-success mx-3 alert-dismissible fade show" role="alert" id="productDeleteSuccessAlert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            The product was deleted successfully!
+        </div>
+
+        <!-- A banner alert for incomplete submission of the form-->
+        <div class="hidden alert alert-danger mx-3 alert-dismissible fade show" role="alert" id="invalidAlert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            Please correct indicated fields before submitting.
+        </div> 
+    
+
+        <!-- The heading -->
+        <h1 class="mx-auto">Configure Toys:</h1>
+    </div>
+
+    <!-- The row that contains the select form -->
+    <div class="row mx-auto" id="selectFormContainer">
+        <!-- Select if you want to add, edit, or delete a toy -->
+        <label for="requestedActionForm" class="form-label ms-4">Select requested action:</label>
+        <select class="form-select ms-4 mb-4" id="requestedActionForm">
+            <option class="selectActionOption" id="placeholderOption">Select Action</option>
+
+            <option class="selectOption" id="addProduct_Option" value="addProduct">Add Product</option>
+
+            <option class="selectOption" id="editProduct_Option" value="editProduct">Edit Product</option>
+
+            <option class="selectOption" id="deleteProduct_Option" value="deleteProduct">Delete Product</option>
+        </select>
+    </div>
+
+    <!-- The row that contains the requested form(s) -->
+    <div class="row" id="FormContainer">
+
+        <!-- Holds the form to add a product -->
+        <div id="addProductFormContainer" class="hidden mx-auto">
+
+            <!-- The form to add a product -->
+            <form class=".needs-validation addProductForm ms-5" id="addProductForm">
+
+                <!-- The name form field for the product -->
+                <div class="mb-3" id="nameContainer">
+                    <label for="productName_Input" class="form-label">Product Name:</label>
+                    <input type="text" class="form-control" id="productName_Input" placeholder="Enter product name" value="" minlength="3" maxlength="30" required>
+                </div>
+
+                <!-- The price form field for the product -->
+                <div class="mb-3" id="priceContainer">
+                    <label for="productPrice_Input" class="form-label">Product Price:</label>
+                    <input type="number" class="form-control" id="productPrice_Input" placeholder="Enter product price" value="" min="1" required>
+                </div>
+
+                 <!-- The form select box for the product type -->
+                 <div class="mb-3" id="productTypeContainer">
+                    <label for="productTypeSelectForm" class="form-label">Product Type:</label>
+                    <select class="form-select" id="productTypeSelectForm">
+                        <option class="selectOption" id="selectProductTypeOption" value="">Select Product Type</option>
+                        <option class="selectOption" id="setOption" value="Brick Set">Brick Set</option>
+                        <option class="selectOption" id="bulkOption" value="Bulk Bricks">Bulk Bricks</option>
+                    </select>
+                </div>
+
+                  <!-- The form select box for the product condition -->
+                  <div class="mb-3" id="productConditionContainer">
+                    <label for="productConditionSelectForm" class="form-label">Product Condition:</label>
+                    <select class="form-select" id="productConditionSelectForm">
+                        <option class="selectOption" id="selectProductConditionOption" value="">Select Product Condition</option>
+                        <option class="selectOption" id="newOption" value="New">New</option>
+                        <option class="selectOption" id="usedOption" value="Used">Used</option>
+                    </select>
+                </div>
+
+                  <!-- The form select box for the recommended product age category -->
+                  <div class="mb-3" id="productAgeCategoryContainer">
+                    <label for="productAgeCategorySelectForm" class="form-label">Product Age Category:</label>
+                    <select class="form-select" id="productAgeCategorySelectForm">
+                        <option class="selectOption" id="selectProductAgeCategoryOption" value="">Select Product Age Category</option>
+                        <option class="selectOption" id="ages2AndUpOption" value="Ages 2+">Ages 2+</option>
+                        <option class="selectOption" id="ages5AndUpOption" value="Ages 5+">Ages 5+</option>
+                        <option class="selectOption" id="ages10AndUpOption" value="Ages 10+">Ages 10+</option>
+                        <option class="selectOption" id="ages16AndUpOption" value="Ages 16+">Ages 16+</option>
+                    </select>
+                </div>
+
+                <!-- The description field for the product -->
+                <div class="mb-3" id="descriptionContainer">
+                    <label for="productDescription_Input" class="form-label">Product Description:</label>
+                    <input type="description" class="form-control" id="productDescription_Input" placeholder="Enter product description" value="" minlength="3" maxLength="50" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field</div>
+                </div>
+
+                <!-- The quantity field for the product -->
+                <div class="mb-3" id="quantityContainer">
+                    <label for="productQuantity_Input" class="form-label">Product Quantity:</label>
+                    <input type="number" class="form-control" id="productQuantity_Input" placeholder="Enter product quantity" value="" min="1" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field</div>
+                </div>
+
+                <!-- The submit button for the addProductForm -->
+                <button form="addProductForm" type="submit" class="btn btn-secondary" id="addProductButton" >Submit</button>
+            </form>
+        </div>
+        
+        <!-- The container that holds the form for editing an existing product -->
+        <div id="editProductFormContainer" class="hidden mx-auto">
+
+            <!-- The edit product form -->
+            <form class=".was-validated editProductForm" id="editProductForm">
+
+                <!-- The select for the product to edit -->
+                <div class="mb-3" id="selectEditProductContainer">
+                    <label for="editProductSelectForm" class="form-label">Select Product:</label>
+                    <select class="form-select" id="editProductSelectForm">
+                        <!-- Options will be added automatically with js -->
+                        <option class="selectOption" value="">Select Product</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                        <img id="productImage_Edit">
+                </div>
+            </form>
+
+            <!-- The form for editing an existing product -->
+            <form class=".needs-validation editProductDataForm ms-5" id="editProductDataForm">
+
+                <!-- The name form field for the product -->
+                <div class="mb-3" id="nameContainer">
+                    <label for="productName_Input" class="form-label">Product Name:</label>
+                    <input type="text" class="form-control" id="productName_Edit" placeholder="Enter product name" value="" minLength="3" maxlength="30" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field</div>
+                </div>
+
+                <!-- The price form field for the product -->
+                <div class="mb-3" id="priceContainer">
+                    <label for="productPrice_Input" class="form-label">Product Price:</label>
+                    <input type="number" class="form-control" id="productPrice_Edit" placeholder="Enter product price" value="" min="1" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field</div>
+                </div>
+
+                 <!-- The form select box for the product type -->
+                 <div class="mb-3" id="productTypeContainer">
+                    <label for="productTypeEditForm" class="form-label">Product Type:</label>
+                    <select class="form-select" id="productTypeEditForm">
+                        <option class="selectOption" id="selectProductTypeOption_Edit" value="">Select Product Type</option>
+                        <option class="selectOption" id="setOption_Edit" value="Brick Set">Brick Set</option>
+                        <option class="selectOption" id="bulkOption_Edit" value="Bulk Bricks">Bulk Bricks</option>
+                    </select>
+                </div>
+
+                  <!-- The form select box for the product condition -->
+                  <div class="mb-3" id="productConditionContainer">
+                    <label for="productConditionEditForm" class="form-label">Product Condition:</label>
+                    <select class="form-select" id="productConditionEditForm">
+                        <option class="selectOption" id="selectProductConditionOption_Edit" value="">Select Product Condition</option>
+                        <option class="selectOption" id="newOption_Edit" value="New">New</option>
+                        <option class="selectOption" id="usedOption_Edit" value="Used">Used</option>
+                    </select>
+                </div>
+
+                  <!-- The form select box for the recommended product age category -->
+                  <div class="mb-3" id="productAgeCategoryContainer">
+                    <label for="productAgeCategoryEditForm" class="form-label">Product Age Category:</label>
+                    <select class="form-select" id="productAgeCategoryEditForm">
+                        <option class="selectOption" id="selectProductAgeCategoryOption_Edit" value="">Select Product Age Category</option>
+                        <option class="selectOption" id="ages2AndUpOption_Edit" value="Ages 2+">Ages 2+</option>
+                        <option class="selectOption" id="ages5AndUpOption_Edit" value="Ages 5+">Ages 5+</option>
+                        <option class="selectOption" id="ages10AndUpOption_Edit" value="Ages 10+">Ages 10+</option>
+                        <option class="selectOption" id="ages16AndUpOption_Edit" value="Ages 16+">Ages 16+</option>
+                    </select>
+                </div>
+
+                <!-- The description field for the product -->
+                <div class="mb-3" id="descriptionContainer">
+                    <label for="productDescription_Input" class="form-label">Product Description:</label>
+                    <input type="text" class="form-control" id="productDescription_Edit" placeholder="Enter product description" value="" minlength="3" maxlength="50" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field</div>
+                </div>
+
+                <!-- The quantity field for the product -->
+                <div class="mb-3" id="quantityContainer">
+                    <label for="productQuantity_Input" class="form-label">Product Quantity:</label>
+                    <input type="number" class="form-control" id="productQuantity_Edit" placeholder="Enter product quantity" value="" min="1" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field</div>
+                </div>
+
+                <!-- The submit button for the editProductDataForm -->
+                <button form="editProductDataForm" type="submit" class="btn btn-secondary" id="editProductDataButton" >Submit</button>
+            </form>
+        </div>
+
+        <!-- T he container that holds the deleteProductForm -->
+        <div id="deleteProductFormContainer" class="hidden  mx-auto">
+
+            <!-- The delete product form -->
+            <form class=".was-validated deleteProductDataForm ms-5" id="deleteProductDataForm">
+
+                <!-- The select to choose the existing product to edit -->
+                <div class="mb-3" id="selectDeleteProductContainer">
+                    <label for="deleteProductSelectForm" class="form-label">Select Product:</label>
+                    <select class="form-select" id="deleteProductSelectForm">
+                        <!-- Options will be added automatically with js -->
+                        <option class="selectOption" value="">Select Product</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <img src="" id="productImage_Delete">
+                </div>
+            
+                <!-- The submit deleteProductDataForm button -->
+                <div>
+                    <button form="deleteProductDataForm" type="submit" class="btn btn-secondary" id="deleteProductDataButton">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

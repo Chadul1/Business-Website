@@ -1,0 +1,41 @@
+
+.product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+.product img {
+    margin-right: 100px;
+    width: 25%;
+}
+
+#productInfo {
+    text-align: left;
+}
+
+.product p{
+    font-size: 28px;
+}
+
+button {
+    background-color: rgb(236, 212, 0);
+    border-radius: 0px;
+    color: black;
+    border:1px solid black;
+}
+
+button:hover {
+    background-color: rgb(39, 39, 74);
+    transition: 0.3s;
+    color: white;
+}
+
+@media (max-width: 700px){
+    .product img{
+        width: 50%;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,110 @@
+/* Following theme of Times New Roman Font*/
+/* body{
+    
+} */
+
+/* banner styling */
+/* #bannerContainer{
+    
+}
+
+#productContainer {
+
+} */
+
+/* The Header above the container of product for sale */
+#productsHeader {
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Styling for the container containing the toy containers haha*/
+#toyProducts {
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling for the toy containers */
+#toyContainer{
+    width: 200px;
+    margin-bottom: 10px;
+    height: 300px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    flex-direction: column;
+    margin-left: 5px;}
+
+/* Container Name */
+#toyContainer p {
+    font-size: 18px;
+}
+
+/* Container Price */
+#toyContainer h4 {
+    font-weight: bold;
+}
+
+#toyImage{
+    height: 140px;
+    width: 140px;
+    margin-top: 10px;
+}
+
+.card-body button {
+    background-color: rgb(236, 212, 0);
+    border-radius: 0px;
+    color: black;
+    border:1px solid black;
+}
+
+.card-body button:hover {
+    background-color: rgb(39, 39, 74);
+    transition: 0.3s;
+    color: white;
+}
+
+#productsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between cards */
+  }
+  
+  /* Style individual product cards */
+  .card {
+    flex: 0 0 calc(20% - 20px); /* Adjust card width to fit three cards per row */
+    /* Add more styles as needed */
+    margin-bottom: 10px;
+    padding: 20px;
+  }
+
+  .card img{
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  .card p{
+    font-size: 20px;  
+  }
+
+  #searchButton{
+    height: 50px;
+    width: 50px;
+    padding: 0px;
+  }
+
+#searchIcon{
+    width: 30px;
+    height: 30px;
+
+}
+
+  h3
+  {
+    display: flex;
+    justify-content: center;
+  }
+

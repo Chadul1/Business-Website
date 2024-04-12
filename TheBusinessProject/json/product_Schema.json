@@ -1,0 +1,73 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Product Object",
+    "description": "The blueprint for the product available on the website.",
+    "type": "object",
+    "properties": 
+    {
+        "productPriceRange":
+        {
+            "description": "A placeholder for the price range automatically assigned in the product constructor.. so please only put an empty string for the value in the JSON files",
+            "type":"string",
+            "exclusiveMaximum": 2
+        },
+
+        "productName" : 
+        {
+            "description" : "The name of the product",
+            "type" : "string"
+        },
+
+        "productType" :
+        {
+            "description": "The type of product.",
+            "type" : "array",
+            "items":
+            {
+                "enum" : ["Brick Set", "Bulk Bricks"]
+            }
+        },
+
+        "productCondition" :
+        {
+            "description": "The condition of the product.",
+            "type" : "array",
+            "items":
+            {
+                "enum" : ["New", "Used"]
+            }
+        },
+
+        "productAgeCategory" :
+        {
+            "description": "The suggested age category of the product.",
+            "type" : "array",
+            "items":
+            {
+                "enum" : ["Ages 2+", "Ages 5+", "Ages 10+", "Ages 16+"]
+            }
+        },
+
+        "productPrice": 
+        {
+            "description": "The price of the product.",
+            "type": "number",
+            "exclusiveMinimum" : 0
+        },
+
+        "productDescription":
+        {
+            "description": "The description for the product.",
+            "type": "string"
+        },
+
+        "productQuantity":
+        {
+            "description":"The quantity of products available at initialization",
+            "type": "number"
+        }
+    },
+    
+    "required": ["productID", "productName", "productType", "productCondition", "productPriceRange", "productAgeCategory", "productPrice", "productDescription", "productQuantity"]
+  }
+

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations</title>
+    <link rel="icon" type="image/x-icon" href="../media/Logo.png">
+    <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Latest compiled JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- The JS added -->
+    <script defer src="../js/navBar.js"></script>
+    <script defer type="module" src="../js/transferToCart.mjs"></script>
+    <!-- Css  -->
+    <link href="../css/donationPage.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <div id="background_Image" class="container-fluid mb-3">
+        <img class="img-fluid rounded mx-auto d-block shadow-sm" src="../media/Donations/donation banner.jpeg">
+    </div>
+    <!-- Container for the upper part of the Page  -->
+    <div class="container mb-3" id="masterContainer">
+        <!-- The header for the site  -->
+        <h1 class="text-center mb-4">Donate NOW!</h1>
+        <!-- the first row for the site  -->
+
+        <div class="row p-2 border border-bottom-0 mb-3">
+                <!-- The title of the section  -->
+                <h2>No brick left behind!</h2>
+                <!-- the text inside the section  -->
+            <div class="col-md-6">
+                <p>
+                    &nbsp; One of the greatest concerns of our company is the overuse and waste of plastics in the world.
+                    Most concerning of all is the mass dumping of perfectly good lego's.
+                    Unwanted lego's should be cleaned and repaired or used to create new lego's in a sustainable way for all. <br>
+                    &nbsp; So we introduce you the 'No Brick Left Behind' initiative, which takes lego's sent in and repairs them for new use.
+                    To then donate them to hundreds of community centers all across the country. <br>
+                    To apply, Fill out the donation form, print it out, and attach it to your box of wrapped lego's!
+                </p>
+                <br>
+                <!-- The button that opens the Model! -->
+                <p class="lead">Fill out a donation form here --> 
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                    Donate!
+                </button>
+                </p>
+                <!-- the wrapper for the modal  -->
+                <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!-- the header of the modal -->
+                                <h5 class="model-title" id="modal-title">Donate Now!</h5>
+                                <!-- button that closes the modal  -->
+                                <Button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></Button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <!-- Space that links to a Lego donation Form. needs JS validation + popup for submittal. "Meaning being the Minis" drive. -->
+                                    <div class="container mt-5 border rounded border-dark p-4" id="donationForm">
+                                        <h3>Donation Form</h3>
+                                        <form class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <!-- Name  -->
+                                                    <label for="name" class="form-label">Full Name:</label>
+                                                    <input type="text" class="form-control" id="name" required>
+
+                                                    <!-- Email  -->
+                                                    <label for="email" class="form-label">Email:</label>
+                                                    <input type="email" class="form-control" id="email" required>
+                                                    <!-- Where the sender wants to send their package  -->
+                                                    <label for="selectOption">Select an destination:</label>     
+                                                    <select class="form-control" id="selectDestination" required>
+                                                        <option value="">Select...</option>
+                                                        <option value="option1">Stevens Point Location</option>
+                                                        <option value="option2">Wisconsin Rapids Location</option>
+                                                        <option value="option3">Marshfield Location</option>
+                                                    </select> 
+                                                </div>
+                                            </div>
+                                            <!-- The address of the sender  -->
+                                            <div class="row">
+                                                <div class="col-md-6"> 
+                                                    <label for="street" class="form-label">Street Address:</label>
+                                                    <input type="text" class="form-control" name="street" required>
+                                                    <!-- city  -->
+                                                    <label for="city" class="form-label">City:</label> 
+                                                    <input type="text" class="form-control" name="city" required>
+                                                </div>     
+                                                <div class="col-md-6"> 
+                                                    <!-- state  -->
+                                                    <label for="state" class="form-label">State:</label>
+                                                    <input type="text" class="form-control" name="state" required>
+                                                    <!-- ZIP  -->
+                                                    <label for="zip" class="form-label">ZIP Code:</label>
+                                                    <input type="text" class="form-control" name="zip" required>
+                                                </div>
+                                            </div>
+                                            <!-- any additional details can be added here  -->
+                                            <div class="row">
+                                                <div class="col-md-12"> 
+                                                <label for="additional">Additional Details/Notes</label><br>
+                                                <textarea id="additional" class="form-control" name="additional" rows="4" cols="50"></textarea><br><br>
+                                                </div>  
+                                            </div>
+                                            <input type="submit" value="Submit Application" class="btn btn-primary" id="applicationSubmit"><br><br>
+                                        </form>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- The section photo -->
+            <div class="col-md-6"><image class="image border" id="donationPhoto" src="../media/Donations/DonateNow.png" alt="Picture of cardboard shipping box"></image></div>
+        </div><br>
+
+
+        <h1 class="text-center mb-3">Giving Back to the Community, Brick by Brick</h1>
+        <!-- the second row for the site  -->
+        <div class="row p-2 border border-bottom-0">
+                <h2>Clean Water Initiatives</h2>
+            <div class="col-md-6">
+                <p>
+                    &nbsp; Water is arguably the most import resource we could ever have. It makes up just over 70% of our surface. 
+                    So why is it that 1 in 4 people don't have a clean source to drink from? <br>
+                    &nbsp; BrickZ works with many small foundations in the United States and
+                    partnered with the Water Project to help bring clean water to all those in need. <br>
+                    &nbsp; BrickZ puts over 200,000$ annually towards building wells for all in and out of the States. 
+                    Be a friend and help fund a charity or foundation in the United States <a href="https://cleanwater.org/campaign/putting-drinking-water-first">Here</a> or donate to the <a href="https://thewaterproject.org"> Water Project here</a>!
+ 
+                </p>
+            </div>
+            <!-- The section photo -->
+            <div class="col-md-6"><image class="image border" id="donationPhoto" src="../media/Donations/Clean drinking water.jpg" alt="Picture of Boy drinking water"></div>
+        </div>
+        <br>
+        
+        <!-- the third row for the site  -->
+        <div class="row p-2 border border-bottom-0">
+            <h2>Recreation & Community</h2>
+          <div class="col-md-6">
+                <p>
+                    &nbsp; Much like the Lego's we care for and cater. We all have the ability to come together and make something greater than ourselves. 
+                    Community is the lifeblood of this company, and we work daily to ensure that the communities that need at little more love get it. <br> 
+                    &nbsp; We make it our mission to work with community leaders to better their communities through cleaning up streets, neighborhoods, and by planting community gardens. <br>
+                    If you are interested in becoming a company partner for a neighborhood in need. <br> Please contact your <a href="../html/contactUsPage.html">nearest location</a> to set up a meeting!
+    
+                </p>
+          </div>
+            <!-- The section photo -->
+          <div class="img col-md-6 img-fluid"><image class="image border" id="donationPhoto" src="../media/Donations/communityService.png" alt="Picture of flower being planted"></div>
+        </div>
+        <br><br>
+
+        <!-- the fourth row for the site  -->
+        <div class="row p-2 border border-bottom-0">
+            <h2>School Scholarships</h2>
+            <div class="col-md-6">
+                <p>
+                    &nbsp;Our founder, Martin, was educated in IT before his founding of our company BrickZ,
+                    and he knew that half of the job in any advanced school was finding good scholarship opportunities to pay for schooling. <br>
+                    &nbsp; Which is why we work with over fifteen technical colleges across the state of Wisconsin to help those who need to pay for their education. 
+                    Any students involved with working within out company will also have pay benefits towards their education payments.
+                </p>
+            </div>
+            <!-- The section photo -->
+            <div class="col-md-6"><image class="image border" id="donationPhoto" src="../media/Donations/StundentGrants.png" alt="Picture of student earning a scholarship"></div>
+        </div>
+    </div>
+</body>
+</html>

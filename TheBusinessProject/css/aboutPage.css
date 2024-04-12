@@ -1,0 +1,95 @@
+.jumbotron {
+    height: 80vh;
+    background: url('../media/services/service_banner_opacity50.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 105px;
+  }
+
+  .jumbotron h1{
+    font-size: 50px;
+    color: white;
+    text-shadow: 0px 0px 8px black;
+  }
+
+  .mission-statement {
+    max-width: 80%;
+    margin: auto;
+  }
+
+  .serviceImage{
+    width: 200px;
+    height: 200px;
+  }
+
+  h2{
+    font-size: 40px;
+  }
+
+  img{
+    width: 300px;
+    border-radius: 10px;
+  }
+
+  #services a{
+    margin-bottom: 50px;
+  }
+
+  #founderBox{
+    margin-top: 25px;
+    margin-bottom: 25px;      
+  }
+
+  #jokeBox{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  #jokeInfo{
+    margin-top: 25px;
+    font-size: x-large;
+  }
+
+  #founders div{
+    margin-bottom: 20px;
+  }
+
+  #founders h3{
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+  }
+
+  #founders p{
+    margin-left: 40px;
+  }
+
+  h4{
+    line-height: 40px;
+    font-size: 30px;
+  }
+
+  @media (max-width: 1000px){
+    .jumbotron{
+        background-image: none;
+        background-color: navy;
+        height: 20vh;
+    }
+
+    .jumbotron h1{
+        text-shadow: none;
+        font-size: 30px;
+    }
+
+    #founders p{
+        display: none;
+    }
+    
+    #founders{
+        flex-direction: column;
+    }
+
+
+  }

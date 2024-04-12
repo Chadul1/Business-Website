@@ -1,0 +1,78 @@
+/* Note: Bootstrap styling is being applied */
+
+/* General Styles */
+body{
+    font-size: 1.2em;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.active{
+    display: flex !important;
+}
+
+h1 
+{
+    display: flex;
+    justify-content: center;
+}
+
+/* Form Styles */
+#selectFormContainer
+{
+   justify-content: center;
+   max-width: 500px;
+}
+
+#addProductFormContainer
+{
+   justify-content: left;
+   max-width: 500px;
+}
+
+#editProductFormContainer
+{
+   justify-content: left;
+   max-width: 500px;
+}
+
+#productImage_Edit
+{
+    max-width: 200px;
+    max-height: 200px;
+    justify-content: left;
+    border-radius: 20px;
+}
+
+#deleteProductFormContainer
+{
+   justify-content: left;
+   max-width: 500px;
+}
+
+#productImage_Delete
+{
+    max-width: 200px;
+    max-height: 200px;
+    justify-content: left;
+    border-radius: 20px;
+}
+
+.modal-header
+{
+    background-color: rgb(32, 35, 49);
+    color: white;
+}
+
+.modal-body
+{
+    color: black;
+}
+
+#deleteModalButton_Delete
+{
+    background-color: red;
+    border-color: red;
+}
